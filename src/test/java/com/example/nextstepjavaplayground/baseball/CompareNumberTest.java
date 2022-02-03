@@ -1,7 +1,6 @@
 package com.example.nextstepjavaplayground.baseball;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -35,5 +34,26 @@ class CompareNumberTest {
   void threeBallTest() {
     int ball = compareNumber.ball("123", "312");
     assertThat(ball).isEqualTo(3);
+  }
+
+  @Test
+  @DisplayName("1스트라이크인 경우")
+  void oneStrikeTest() {
+    int strike = compareNumber.strike("123", "156");
+    assertThat(strike).isEqualTo(1);
+  }
+
+  @Test
+  @DisplayName("2스트라이크인 경우")
+  void twoStrikeTest() {
+    int strike = compareNumber.strike("123", "126");
+    assertThat(strike).isEqualTo(2);
+  }
+
+  @Test
+  @DisplayName("3스트라이크인 경우")
+  void threeStrikeTest() {
+    int strike = compareNumber.strike("123", "123");
+    assertThat(strike).isEqualTo(3);
   }
 }

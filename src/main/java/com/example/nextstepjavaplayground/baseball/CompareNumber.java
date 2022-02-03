@@ -1,7 +1,9 @@
 package com.example.nextstepjavaplayground.baseball;
 
 public class CompareNumber {
+  int strike;
   int ball;
+
   public int ball(String randomNum, String inputNum) {
     ball = 0;
     for (int i = 0; i < 3; i++) {
@@ -24,5 +26,17 @@ public class CompareNumber {
 
   private boolean numCompare(String randomNum, String inputNum, int i, int j) {
     return i != j && randomNum.charAt(i) == inputNum.charAt(j);
+  }
+
+  public int strike(String randomNum, String inputNum) {
+    strike = 0;
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        if (i == j && randomNum.charAt(i) == inputNum.charAt(j)) {
+          strike++;
+        }
+      }
+    }
+    return strike;
   }
 }
