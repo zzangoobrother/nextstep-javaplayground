@@ -13,4 +13,8 @@ public class BallNumber {
   public boolean numberCheck(int inputNum) {
     return inputNum >= MIN_BALL_NUMBER && inputNum <= MAX_BALL_NUMBER;
   }
+
+  public boolean numberDigit(List<Integer> numbers) {
+    return numbers.size() == 3;
+  }
 }
