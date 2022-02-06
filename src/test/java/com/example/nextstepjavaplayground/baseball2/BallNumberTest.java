@@ -29,4 +29,11 @@ public class BallNumberTest {
     assertThat(ballNumber.numberDigit(Arrays.asList(1, 2, 3))).isTrue();
     assertThat(ballNumber.numberDigit(Arrays.asList(1, 2))).isFalse();
   }
+
+  @Test
+  @DisplayName("서로 다른 3개의 숫자인지 확인")
+  void inputNumberDuplicate() {
+    assertThat(ballNumber.numberDuplicate(Arrays.asList(1, 2, 3))).isTrue();
+    assertThat(ballNumber.numberDuplicate(Arrays.asList(1, 2, 2))).isFalse();
+  }
 }
