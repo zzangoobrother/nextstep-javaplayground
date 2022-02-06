@@ -2,6 +2,9 @@ package com.example.nextstepjavaplayground.baseball2;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,4 +26,18 @@ public class RandomNumberTest {
     assertThat(randomNum <= 9).isTrue();
   }
 
+  @Test
+  @DisplayName("1에서 9까지 중복없는 3자리 숫자 생성")
+  void computerRandomNumber() {
+    List<Integer> computerNumbers = randomNumber.computerRandomNumber();
+    Set<Integer> tempNumbers = new HashSet<>();
+
+    for (int number : computerNumbers) {
+      if (!tempNumbers.contains(number)) {
+        tempNumbers.add(number);
+      }
+    }
+
+    assertThat(tempNumbers.size()).isEqualTo(3);
+  }
 }
