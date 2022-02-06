@@ -30,14 +30,7 @@ public class RandomNumberTest {
   @DisplayName("1에서 9까지 중복없는 3자리 숫자 생성")
   void computerRandomNumber() {
     List<Integer> computerNumbers = randomNumber.computerRandomNumber();
-    Set<Integer> tempNumbers = new HashSet<>();
-
-    for (int number : computerNumbers) {
-      if (!tempNumbers.contains(number)) {
-        tempNumbers.add(number);
-      }
-    }
-
+    Set<Integer> tempNumbers = new HashSet<>(computerNumbers);
     assertThat(tempNumbers.size()).isEqualTo(3);
   }
 }
