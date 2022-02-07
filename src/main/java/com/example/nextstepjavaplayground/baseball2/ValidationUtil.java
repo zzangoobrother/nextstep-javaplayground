@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class BallNumber {
+public class ValidationUtil {
 
   private final int MAX_BALL_NUMBER = 9;
   private final int MIN_BALL_NUMBER = 1;

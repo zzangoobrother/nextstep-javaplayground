@@ -9,31 +9,31 @@ import org.junit.jupiter.api.Test;
 
 public class BallNumberTest {
 
-  BallNumber ballNumber;
+  ValidationUtil validationUtil;
 
   @BeforeEach
   void setup() {
-    ballNumber = new BallNumber();
+    validationUtil = new ValidationUtil();
   }
 
   @Test
   @DisplayName("입력받은 숫자가 1에서 9사이의 숫자 확인")
   void inputNumberCheckTrue() {
-    assertThat(ballNumber.numberCheck(1)).isTrue();
-    assertThat(ballNumber.numberCheck(10)).isFalse();
+    assertThat(validationUtil.numberCheck(1)).isTrue();
+    assertThat(validationUtil.numberCheck(10)).isFalse();
   }
 
   @Test
   @DisplayName("입력받은 숫자가 3자리 인지 확인")
   void inputNumberDigit() {
-    assertThat(ballNumber.numberDigit(Arrays.asList(1, 2, 3))).isTrue();
-    assertThat(ballNumber.numberDigit(Arrays.asList(1, 2))).isFalse();
+    assertThat(validationUtil.numberDigit(Arrays.asList(1, 2, 3))).isTrue();
+    assertThat(validationUtil.numberDigit(Arrays.asList(1, 2))).isFalse();
   }
 
   @Test
   @DisplayName("서로 다른 3개의 숫자인지 확인")
   void inputNumberDuplicate() {
-    assertThat(ballNumber.numberDuplicate(Arrays.asList(1, 2, 3))).isTrue();
-    assertThat(ballNumber.numberDuplicate(Arrays.asList(1, 2, 2))).isFalse();
+    assertThat(validationUtil.numberDuplicate(Arrays.asList(1, 2, 3))).isTrue();
+    assertThat(validationUtil.numberDuplicate(Arrays.asList(1, 2, 2))).isFalse();
   }
 }
