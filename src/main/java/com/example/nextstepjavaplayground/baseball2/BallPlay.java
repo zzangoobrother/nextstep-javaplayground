@@ -19,11 +19,11 @@ public class BallPlay {
     return result;
   }
 
-  public PlayResult playResult(List<Integer> balls) {
-    BallPlay userBalls = new BallPlay(balls);
+  public PlayResult playResult(List<Integer> userBalls) {
+    BallPlay userBallPlay = new BallPlay(userBalls);
     PlayResult playResult = new PlayResult();
     for (Ball ball : comBalls) {
-      playResult.baseBallCheck(userBalls.play(ball));
+      playResult.baseBallCheck(userBallPlay.play(ball));
     }
     return playResult;
   }

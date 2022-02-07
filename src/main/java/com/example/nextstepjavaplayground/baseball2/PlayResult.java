@@ -13,6 +13,12 @@ public class PlayResult {
     return this.strike;
   }
 
+  public void nothingPrint() {
+    if (ball == 0 && strike == 0) {
+      System.out.print(BallStatus.NOTHING);
+    }
+  }
+
   public void baseBallCheck(BallStatus status) {
     if (status.isStrike()) {
       strike++;
