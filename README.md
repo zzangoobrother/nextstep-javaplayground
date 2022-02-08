@@ -8,5 +8,5 @@ nextstep에서 자바 플레이그라운드 with TDD, 클린코드 미션을 완
 [baseball1][link]
 
 - tdd를 하고자 했다. 아직 부족하지만 다음 미션을 통해 다시 공부해야 겠다.
-[link2]: https://github.com/zzangoobrother/nextstep-javaplayground/tree/master/src/main/java/com/example/nextstepjavaplayground/baseball2
-[baseball2][link2]
+[link]: https://github.com/zzangoobrother/nextstep-javaplayground/tree/master/src/main/java/com/example/nextstepjavaplayground/baseball2
+[baseball2][link]
