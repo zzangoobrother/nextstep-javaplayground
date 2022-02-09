@@ -5,6 +5,9 @@ public class Car {
   private int position;
 
   public Car(String name, int position) {
+    if (validation(name)) {
+      throw new RuntimeException();
+    }
     this.name = name;
     this.position = position;
   }
@@ -15,5 +18,9 @@ public class Car {
 
   public int getPosition() {
     return this.position;
+  }
+
+  private boolean validation(String name) {
+    return name.length() > 5;
   }
 }
