@@ -5,12 +5,18 @@ import static java.util.stream.Collectors.toList;
 import java.util.Arrays;
 import java.util.List;
 
-public class RasingCarName {
+public class Cars {
 
-  public List<Car> makeCars(String inputCarName) {
+  private final List<Car> cars;
+
+  public Cars(String inputCarName) {
     String[] names = inputCarName.split(",");
-    return Arrays.stream(names)
+    cars = Arrays.stream(names)
         .map(name -> new Car(name, 0))
         .collect(toList());
+  }
+
+  public List<Car> getCars() {
+    return cars;
   }
 }
