@@ -16,7 +16,23 @@ public class Cars {
         .collect(toList());
   }
 
-  public List<Car> getCars() {
-    return cars;
+  public int carsSize() {
+    return cars.size();
+  }
+
+  public Car getCar(int index) {
+    return cars.get(index);
+  }
+
+  public void forwardCar(int index) {
+    cars.get(index).forwardPosition();
+  }
+
+  public List<String> winner() {
+    int max = cars.stream().mapToInt(Car::getPosition).max().getAsInt();
+    return cars.stream()
+        .filter(car -> car.getPosition() == max)
+        .map(Car::getName)
+        .collect(toList());
   }
 }

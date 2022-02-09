@@ -20,6 +20,10 @@ public class Car {
     return this.position;
   }
 
+  public void forwardPosition() {
+    this.position++;
+  }
+
   private boolean validation(String name) {
     return name.length() > 5;
   }
