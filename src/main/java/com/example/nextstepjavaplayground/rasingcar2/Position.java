@@ -5,6 +5,9 @@ public class Position {
   private int position;
 
   public Position(int position) {
+    if (position < 0) {
+      throw new IllegalArgumentException("음수는 들어올 수 없습니다.");
+    }
     this.position = position;
   }
 
