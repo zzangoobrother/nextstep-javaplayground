@@ -17,6 +17,10 @@ public class Car {
     this(name, new Position());
   }
 
+  public Position getPosition() {
+    return position;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
