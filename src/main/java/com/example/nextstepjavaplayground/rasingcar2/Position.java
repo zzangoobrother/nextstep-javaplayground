@@ -15,6 +15,10 @@ public class Position {
     this(0);
   }
 
+  public void move() {
+    this.position++;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
