@@ -12,4 +12,23 @@ public class YCoordinate {
     }
     this.y = y;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    YCoordinate that = (YCoordinate) o;
+
+    return y == that.y;
+  }
+
+  @Override
+  public int hashCode() {
+    return y;
+  }
 }

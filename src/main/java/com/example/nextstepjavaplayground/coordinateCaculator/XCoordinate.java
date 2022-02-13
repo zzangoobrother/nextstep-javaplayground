@@ -12,4 +12,23 @@ public class XCoordinate {
     }
     this.x = x;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    XCoordinate that = (XCoordinate) o;
+
+    return x == that.x;
+  }
+
+  @Override
+  public int hashCode() {
+    return x;
+  }
 }

@@ -2,8 +2,6 @@ package com.example.nextstepjavaplayground.coordinateCaculator;
 
 public class Coordinate {
 
-  private static final int MAX_COORDINATE = 24;
-
   private XCoordinate xCoordinate;
   private YCoordinate yCoordinate;
 
@@ -14,5 +12,29 @@ public class Coordinate {
     } catch (IllegalArgumentException e) {
       System.out.println("좌표의 크기는 24 이하입니다. 다시 입력해주세요.");
     }
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    Coordinate that = (Coordinate) o;
+
+    if (xCoordinate != null ? !xCoordinate.equals(that.xCoordinate) : that.xCoordinate != null) {
+      return false;
+    }
+    return yCoordinate != null ? yCoordinate.equals(that.yCoordinate) : that.yCoordinate == null;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = xCoordinate != null ? xCoordinate.hashCode() : 0;
+    result = 31 * result + (yCoordinate != null ? yCoordinate.hashCode() : 0);
+    return result;
   }
 }
