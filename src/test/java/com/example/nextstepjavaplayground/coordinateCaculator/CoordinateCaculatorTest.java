@@ -15,4 +15,12 @@ public class CoordinateCaculatorTest {
     LineCoordinateCaculator line = new LineCoordinateCaculator();
     assertThat(line.caculator(coordinates)).isEqualTo(6.403124, offset(0.00099));
   }
+
+  @Test
+  @DisplayName("사각형 넓이 구하기")
+  void coordinateSquare() {
+    Coordinates coordinates = new Coordinates("(10,10)-(20,10)-(20,20)-(10,20)");
+    SquareCoordinateCaculator square = new SquareCoordinateCaculator();
+    assertThat(square.caculator(coordinates)).isEqualTo(100, offset(0.00099));
+  }
 }
