@@ -14,6 +14,22 @@ public class Coordinate {
     }
   }
 
+  public int xCoordinateCaculate(XCoordinate target) {
+    return this.xCoordinate.caculate(target);
+  }
+
+  public int yCoordinateCaculate(YCoordinate target) {
+    return this.yCoordinate.caculate(target);
+  }
+
+  public XCoordinate getxCoordinate() {
+    return this.xCoordinate;
+  }
+
+  public YCoordinate getyCoordinate() {
+    return this.yCoordinate;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {

@@ -13,6 +13,14 @@ public class XCoordinate {
     this.x = x;
   }
 
+  public int caculate(XCoordinate target) {
+    return this.x - target.getX();
+  }
+
+  public int getX() {
+    return this.x;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {

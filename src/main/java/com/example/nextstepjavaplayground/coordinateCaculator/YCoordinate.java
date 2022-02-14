@@ -13,6 +13,14 @@ public class YCoordinate {
     this.y = y;
   }
 
+  public int caculate(YCoordinate target) {
+    return this.y - target.getY();
+  }
+
+  public int getY() {
+    return this.y;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
