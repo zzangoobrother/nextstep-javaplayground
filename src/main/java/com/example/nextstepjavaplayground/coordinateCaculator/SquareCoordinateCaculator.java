@@ -10,18 +10,7 @@ public class SquareCoordinateCaculator implements CoordinateCaculator {
   @Override
   public double caculator(Coordinates coordinates) {
     List<Coordinate> coordinatesList = coordinates.getCoordinates();
-    Collections.sort(coordinatesList, (o1, o2) -> {
-        if (getXLength(o1, o2) > 0) {
-          return getYLength(o1, o2);
-        }
-
-        if (getXLength(o1, o2) < 0) {
-          return getYLength(o2, o1);
-        }
-
-        return getXLength(o1, o2);
-      }
-    );
+    coordinatesSort(coordinatesList);
 
     Set<Double> lines = getLengths(coordinatesList);
 
@@ -36,6 +25,21 @@ public class SquareCoordinateCaculator implements CoordinateCaculator {
       result *= x;
     }
     return result;
+  }
+
+  private void coordinatesSort(List<Coordinate> coordinatesList) {
+    Collections.sort(coordinatesList, (o1, o2) -> {
+          if (getXLength(o1, o2) > 0) {
+            return getYLength(o1, o2);
+          }
+
+          if (getXLength(o1, o2) < 0) {
+            return getYLength(o2, o1);
+          }
+
+          return getXLength(o1, o2);
+        }
+    );
   }
 
   private int getXLength(Coordinate origin, Coordinate target) {
