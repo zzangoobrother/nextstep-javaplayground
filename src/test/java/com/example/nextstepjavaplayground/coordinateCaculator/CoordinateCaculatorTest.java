@@ -23,4 +23,12 @@ public class CoordinateCaculatorTest {
     SquareCoordinateCaculator square = new SquareCoordinateCaculator();
     assertThat(square.caculator(coordinates)).isEqualTo(100, offset(0.00099));
   }
+
+  @Test
+  @DisplayName("삼각형 넓이 구하기")
+  void coordinateTriangle() {
+    Coordinates coordinates = new Coordinates("(10,10)-(14,15)-(20,8)");
+    TriangleCoordinateCaculator triangle = new TriangleCoordinateCaculator();
+    assertThat(triangle.caculator(coordinates)).isEqualTo(29.0, offset(0.00099));
+  }
 }
