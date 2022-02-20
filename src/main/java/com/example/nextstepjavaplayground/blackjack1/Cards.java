@@ -14,6 +14,15 @@ public class Cards {
     this.cardList = cardList;
   }
 
+  public int getSum() {
+    int sum = cardList.stream().mapToInt(card -> card.getDenomination().getScore()).sum();
+    if (sum <= 11) {
+      sum += 10;
+    }
+
+    return sum;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
