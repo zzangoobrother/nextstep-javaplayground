@@ -1,8 +1,10 @@
 package com.example.nextstepjavaplayground.blackjack1;
 
-public abstract class Finished implements State {
+public abstract class Finished extends Started {
 
-  public abstract double earningRate();
+  public Finished(Cards cards) {
+    super(cards);
+  }
 
   @Override
   public State draw(Card card) {
@@ -10,7 +12,9 @@ public abstract class Finished implements State {
   }
 
   @Override
-  public Cards cards() {
+  public State stay() {
     return null;
   }
+
+  public abstract double earningRate();
 }

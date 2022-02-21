@@ -1,15 +1,12 @@
 package com.example.nextstepjavaplayground.blackjack1;
 
 public class Bust extends Finished {
-
-  private final Cards cards;
-
   public Bust(Cards cards) {
-    this.cards = cards;
+    super(cards);
   }
 
   public double earningRate() {
-    return cards.getPrice() * 0.0;
+    return cards().getPrice() * 0.0;
   }
 
   @Override
@@ -22,12 +19,13 @@ public class Bust extends Finished {
     }
 
     Bust bust = (Bust) o;
-
-    return cards != null ? cards.equals(bust.cards) : bust.cards == null;
+    Cards cards = cards();
+    return cards != null ? cards.equals(bust.cards()) : bust.cards() == null;
   }
 
   @Override
   public int hashCode() {
+    Cards cards = cards();
     return cards != null ? cards.hashCode() : 0;
   }
 }

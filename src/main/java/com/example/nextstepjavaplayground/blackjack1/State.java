@@ -5,4 +5,6 @@ public interface State {
   public Cards cards();
 
   public State draw(Card card);
+
+  public State stay();
 }

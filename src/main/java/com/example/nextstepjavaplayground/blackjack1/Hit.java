@@ -1,14 +1,13 @@
 package com.example.nextstepjavaplayground.blackjack1;
 
-public class Hit implements State {
-
-  private final Cards cards;
+public class Hit extends Running {
 
   public Hit(Cards cards) {
-    this.cards = cards;
+    super(cards);
   }
 
   public State draw(Card card) {
+    Cards cards = cards();
     cards.add(card);
     if (cards.isBust()) {
       return new Bust(cards);
@@ -16,7 +15,8 @@ public class Hit implements State {
     return new Hit(cards);
   }
 
-  public Cards cards() {
-    return this.cards;
+  @Override
+  public State stay() {
+    return new Stay(cards());
   }
 }
