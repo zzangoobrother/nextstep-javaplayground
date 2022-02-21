@@ -11,12 +11,12 @@ import org.junit.jupiter.api.Test;
 public class CardTest {
 
   private List<Card> includeAcecardList;
-  private List<Card> NotIncludeAcecardList;
+  private List<Card> notIncludeAcecardList;
 
   @BeforeEach
   void setup() {
     includeAcecardList = Arrays.asList(new Card(Suit.CLUBS, Denomination.ACE), new Card(Suit.DIAMONDS, Denomination.EIGHT));
-    NotIncludeAcecardList = Arrays.asList(new Card(Suit.CLUBS, Denomination.JACK), new Card(Suit.DIAMONDS, Denomination.EIGHT));
+    notIncludeAcecardList = Arrays.asList(new Card(Suit.CLUBS, Denomination.JACK), new Card(Suit.DIAMONDS, Denomination.EIGHT));
   }
 
   @Test
@@ -36,7 +36,7 @@ public class CardTest {
   @Test
   @DisplayName("카드의 합")
   void addCardNumber() {
-    Cards cards = new Cards("홍길동", 10000, NotIncludeAcecardList);
+    Cards cards = new Cards("홍길동", 10000, notIncludeAcecardList);
     assertThat(cards.getSum()).isEqualTo(18);
   }
 

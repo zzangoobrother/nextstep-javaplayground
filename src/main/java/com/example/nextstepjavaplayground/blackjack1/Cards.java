@@ -4,9 +4,15 @@ import java.util.List;
 
 public class Cards {
 
+  private static final int MAX_SUM = 21;
+  private static final int ACE_ONE_OR_TEN = 11;
+  private static final int PLUS_ACE_TEN = 10;
+
   private final String name;
   private final int price;
-  private final List<Card> cardList;
+  private List<Card> cardList;
+
+  private int sum;
 
   public Cards(String name, int price, List<Card> cardList) {
     this.name = name;
@@ -15,12 +21,29 @@ public class Cards {
   }
 
   public int getSum() {
-    int sum = cardList.stream().mapToInt(card -> card.getDenomination().getScore()).sum();
-    if (sum <= 11) {
-      sum += 10;
-    }
+    sum = cardList.stream()
+        .mapToInt(card -> card.getDenomination().getScore())
+        .sum();
 
+    if (sum <= ACE_ONE_OR_TEN) {
+      sum += PLUS_ACE_TEN;
+    }
     return sum;
+  }
+
+  public void add(Card card) {
+    this.cardList.add(card);
+  }
+
+  public boolean isBust() {
+    if (getSum() > MAX_SUM) {
+      return true;
+    }
+    return false;
+  }
+
+  public int getPrice() {
+    return this.price;
   }
 
   @Override
