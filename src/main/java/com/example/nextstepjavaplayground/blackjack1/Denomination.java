@@ -1,5 +1,7 @@
 package com.example.nextstepjavaplayground.blackjack1;
 
+import java.util.Arrays;
+
 public enum Denomination {
 
   ACE(1),
@@ -28,5 +30,27 @@ public enum Denomination {
 
   public int getScore() {
     return score;
+  }
+
+  public Denomination getDenomination(int target) {
+    if (target <= 9) {
+      return Arrays.stream(values())
+          .filter(denomination -> denomination.getScore() == target)
+          .findFirst().get();
+    }
+
+    if (target == 10) {
+      return Denomination.TEN;
+    }
+
+    if (target == 11) {
+      return Denomination.JACK;
+    }
+
+    if (target == 12) {
+      return Denomination.QUEEN;
+    }
+
+    return Denomination.KING;
   }
 }

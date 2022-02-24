@@ -24,6 +24,6 @@ public class BlackjackTest {
     Cards cards = new Cards("홍길동", 10000, cardList);
     Blackjack blackjack = new Blackjack(cards);
 
-    assertThat(blackjack.earningRate()).isEqualTo(15000.0);
+    assertThat(blackjack.earningRate()).isEqualTo(1.5);
   }
 }

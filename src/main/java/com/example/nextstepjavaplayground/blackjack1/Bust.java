@@ -6,7 +6,7 @@ public class Bust extends Finished {
   }
 
   public double earningRate() {
-    return cards().getPrice() * 0.0;
+    return 0.0;
   }
 
   @Override

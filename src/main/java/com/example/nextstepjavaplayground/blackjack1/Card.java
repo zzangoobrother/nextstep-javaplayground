@@ -14,6 +14,10 @@ public class Card {
     return this.denomination;
   }
 
+  public Suit getSuit() {
+    return this.suit;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {

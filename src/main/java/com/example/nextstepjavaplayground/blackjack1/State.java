@@ -7,4 +7,8 @@ public interface State {
   public State draw(Card card);
 
   public State stay();
+
+  public boolean isFinished();
+
+  public double profit(double rate);
 }

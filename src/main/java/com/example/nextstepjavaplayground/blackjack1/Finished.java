@@ -13,7 +13,17 @@ public abstract class Finished extends Started {
 
   @Override
   public State stay() {
-    return null;
+    return new Stay(cards());
+  }
+
+  @Override
+  public boolean isFinished() {
+    return true;
+  }
+
+  @Override
+  public double profit(double rate) {
+    return cards().getPrice() * rate;
   }
 
   public abstract double earningRate();

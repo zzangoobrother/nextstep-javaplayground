@@ -25,10 +25,17 @@ public class Cards {
         .mapToInt(card -> card.getDenomination().getScore())
         .sum();
 
-    if (sum <= ACE_ONE_OR_TEN) {
+    if (cardAceAndSumCheck()) {
       sum += PLUS_ACE_TEN;
     }
     return sum;
+  }
+
+  private boolean cardAceAndSumCheck() {
+    boolean aceFlag = cardList.stream()
+        .anyMatch(card -> card.getDenomination().isAce());
+
+    return aceFlag && sum <= ACE_ONE_OR_TEN;
   }
 
   public void add(Card card) {
@@ -44,6 +51,14 @@ public class Cards {
 
   public int getPrice() {
     return this.price;
+  }
+
+  public String getName() {
+    return this.name;
+  }
+
+  public List<Card> getCardList() {
+    return this.cardList;
   }
 
   @Override
